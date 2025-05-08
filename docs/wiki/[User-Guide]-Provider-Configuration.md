@@ -7,8 +7,8 @@ This change is intended to simplify deployments using a single pipeline to creat
 
 The module utilizes 3 providers in total:
 
-| Resource category | Provider |
-| ----------------- | -------- |
+| Resource category                           | Provider               |
+| ------------------------------------------- | ---------------------- |
 | [Core][wiki_core_resources]                 | `azurerm` *(default)*  |
 | [Connectivity][wiki_connectivity_resources] | `azurerm.connectivity` |
 | [Management][wiki_management_resources]     | `azurerm.management`   |
@@ -54,7 +54,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.107"
+      version = "~> 4.0"
     }
   }
 }
@@ -112,7 +112,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.107"
+      version = "~> 4.0"
       configuration_aliases = [
         azurerm.connectivity,
         azurerm.management,

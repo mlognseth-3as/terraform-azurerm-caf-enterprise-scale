@@ -14,11 +14,11 @@ If you want to use an orchestration module to manage deployment within a single 
 
 This covers scenarios such as:
 
-| Scenario | Description |
-| :--- | :--- |
-| Delegate responsibility using GitOps | Where an organization wants to use features such as CODEOWNERS to control who can approve changes to code for resources by category. |
-| Split across multiple state files | Due to the number of resources needed to deploy an Azure landing zone, some customers may want to split deployment across multiple state files. |
-| Simplify maintenance | Using multiple files to control the configuration of resources by scope makes it easier to understand the relationship to resources being managed by that code. |
+| Scenario                             | Description                                                                                                                                                     |
+| :----------------------------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Delegate responsibility using GitOps | Where an organization wants to use features such as CODEOWNERS to control who can approve changes to code for resources by category.                            |
+| Split across multiple state files    | Due to the number of resources needed to deploy an Azure landing zone, some customers may want to split deployment across multiple state files.                 |
+| Simplify maintenance                 | Using multiple files to control the configuration of resources by scope makes it easier to understand the relationship to resources being managed by that code. |
 
 This example builds on top of existing examples, including:
 
@@ -94,7 +94,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.107"
+      version = "~> 4.0"
     }
   }
   backend "local" {
@@ -324,7 +324,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.107"
+      version = "~> 4.0"
     }
   }
   backend "local" {
@@ -553,7 +553,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.107"
+      version = "~> 4.0"
     }
   }
   backend "local" {

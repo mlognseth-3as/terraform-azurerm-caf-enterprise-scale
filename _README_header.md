@@ -38,12 +38,12 @@ The [Azure landing zones Terraform module](https://registry.terraform.io/modules
 
 This is currently split logically into the following capabilities within the module (*links to further guidance on the Wiki*):
 
-| Module capability | Scope | Design area |
-| :--- | :--- | :--- |
-| [Core Resources](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Core-Resources) | Management group and subscription organization | [Resource organization](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org) |
-| [Management Resources](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Management-Resources) | Management subscription | [Management](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/management) |
-| [Connectivity Resources](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Connectivity-Resources) | Connectivity subscription | [Network topology and connectivity](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/network-topology-and-connectivity) |
-| [Identity Resources](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Identity-Resources) | Identity subscription | [Identity and access management](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/identity-access) |
+| Module capability                                                                                                                      | Scope                                          | Design area                                                                                                                                                      |
+| :------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Core Resources](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Core-Resources)                 | Management group and subscription organization | [Resource organization](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/resource-org)                                  |
+| [Management Resources](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Management-Resources)     | Management subscription                        | [Management](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/management)                                               |
+| [Connectivity Resources](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Connectivity-Resources) | Connectivity subscription                      | [Network topology and connectivity](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/network-topology-and-connectivity) |
+| [Identity Resources](https://github.com/Azure/terraform-azurerm-caf-enterprise-scale/wiki/%5BUser-Guide%5D-Identity-Resources)         | Identity subscription                          | [Identity and access management](https://learn.microsoft.com/azure/cloud-adoption-framework/ready/landing-zone/design-area/identity-access)                      |
 
 Using a very [simple initial configuration](#maintf), the module will deploy a management group hierarchy based on the above diagram.
 This includes the recommended governance baseline, applied using Azure Policy and Access control (IAM) resources deployed at the management group scope.
@@ -79,7 +79,7 @@ terraform {
   required_providers {
     azurerm = {
       source  = "hashicorp/azurerm"
-      version = "~> 3.107"
+      version = "~> 4.0"
     }
   }
 }
