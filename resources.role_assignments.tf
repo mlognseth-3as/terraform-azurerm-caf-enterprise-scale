@@ -48,7 +48,6 @@ module "role_assignments_for_policy" {
     time_sleep.after_azurerm_policy_definition,
     time_sleep.after_azurerm_policy_set_definition,
     time_sleep.after_azurerm_policy_assignment,
-    azurerm_role_assignment.policy_assignment,
   ]
 
 }
@@ -66,19 +65,6 @@ data "azapi_resource" "user_msi" {
   type        = "Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31"
 
   response_export_values = ["properties.principalId"]
-}
-
-# The following resource is left to help manage the
-# upgrade to using module.role_assignments_for_policy
-# To be removed in `v2.0.0`
-resource "azurerm_role_assignment" "policy_assignment" {
-  for_each = local.empty_map
-
-  # Mandatory resource attributes
-  name         = basename(each.key)
-  scope        = each.value.scope_id
-  principal_id = each.value.principal_id
-
 }
 
 resource "time_sleep" "after_azurerm_role_assignment" {
@@ -112,7 +98,6 @@ resource "azurerm_role_assignment" "private_dns_zone_contributor_connectivity" {
     time_sleep.after_azurerm_policy_definition,
     time_sleep.after_azurerm_policy_set_definition,
     time_sleep.after_azurerm_policy_assignment,
-    azurerm_role_assignment.policy_assignment,
   ]
 }
 
@@ -127,7 +112,6 @@ resource "azurerm_role_assignment" "deploy_azsqldb_auditing_connectivity" {
     time_sleep.after_azurerm_policy_definition,
     time_sleep.after_azurerm_policy_set_definition,
     time_sleep.after_azurerm_policy_assignment,
-    azurerm_role_assignment.policy_assignment,
   ]
 }
 
@@ -141,7 +125,6 @@ resource "azurerm_role_assignment" "ama_reader" {
     time_sleep.after_azurerm_policy_definition,
     time_sleep.after_azurerm_policy_set_definition,
     time_sleep.after_azurerm_policy_assignment,
-    azurerm_role_assignment.policy_assignment,
   ]
 }
 
@@ -155,6 +138,5 @@ resource "azurerm_role_assignment" "ama_managed_identity_operator" {
     time_sleep.after_azurerm_policy_definition,
     time_sleep.after_azurerm_policy_set_definition,
     time_sleep.after_azurerm_policy_assignment,
-    azurerm_role_assignment.policy_assignment,
   ]
 }
